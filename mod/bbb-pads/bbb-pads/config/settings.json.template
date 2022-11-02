@@ -1,0 +1,45 @@
+{
+  "etherpad": {
+    "scheme": "http",
+    "host": "127.0.0.1",
+    "port": 9001,
+    "api": {
+      "version": "1.2.14",
+      "key": ETHERPAD_API_KEY
+    },
+    "session": {
+      "ttl": 21600000
+    },
+    "update": {
+      "throttle": 15000
+    }
+  },
+  "express": {
+    "host": "127.0.0.1",
+    "port": 9002,
+    "proxy": {
+      "session": {
+        "ttl": 60000
+      }
+    }
+  },
+  "log": {
+    "level": "info"
+  },
+  "monitor": {
+    "enabled": true,
+    "interval": 3600000
+  },
+  "redis": {
+    "host": "127.0.0.1",
+    "port": 6379,
+    "password": null,
+    "channels": {
+      "publish": "to-akka-apps-redis-channel",
+      "subscribe": [
+        "from-akka-apps-redis-channel",
+        "from-etherpad-redis-channel"
+      ]
+    }
+  }
+}

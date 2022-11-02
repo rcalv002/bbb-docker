@@ -1,0 +1,36 @@
+{
+  "name": "bbb-pads",
+  "version": "1.2.1",
+  "description": "BigBlueButton's pads manager",
+  "scripts": {
+    "start": "node index.js",
+    "lint": "./node_modules/.bin/eslint lib/**",
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bigbluebutton/bbb-pads.git"
+  },
+  "keywords": [
+    "bigbluebutton",
+    "etherpad"
+  ],
+  "author": "Pedro Beschorner Marin <pedrobmarin@gmail.com>",
+  "license": "LGPL-3.0",
+  "bugs": {
+    "url": "https://github.com/bigbluebutton/bbb-pads/issues"
+  },
+  "homepage": "https://github.com/bigbluebutton/bbb-pads#readme",
+  "dependencies": {
+    "@mconf/bbb-diff": "^1.2.0",
+    "axios": "^0.22.0",
+    "express": "^4.17.3",
+    "http-proxy": "^1.18.1",
+    "lodash": "^4.17.21",
+    "redis": "^3.1.2"
+  },
+  "devDependencies": {
+    "eslint": "^8.12.0",
+    "jest": "^27.5.1"
+  }
+}

@@ -1,0 +1,227 @@
+kurento:
+  __name: KURENTO
+  __format: json
+
+# Values: ROUND_ROBIN or MEDIA_TYPE
+balancing-strategy: BALANCING_STRATEGY
+
+redisHost: REDIS_HOST
+redisPort: REDIS_PORT
+redisPassword: REDIS_PASSWORD
+
+clientHost: CLIENT_HOST
+wsStrictHeaderParsing:
+  __name: WS_STRICT_HEADER_PARSING
+  __format: json
+wsHeartbeatInterval:
+  __name: WS_HEARTBEAT_INTERVAL
+  __format: yaml
+wsServerOptions:
+  __name: WS_SERVER_OPTIONS
+  __format: json
+
+mcs-port: MCS_PORT
+mcs-host: MCS_HOST
+mcs-address: MCS_ADDRESS
+mcsUserEjectionTimer: MCS_USER_EJECTION_TIMER
+mcsRoomDestructionTimer: MCS_ROOM_DESTRUCTION_TIMER
+destroyRoomOnEject:
+  __name: DESTROY_ROOM_ON_EJECT
+  __format: json
+
+freeswitch:
+    ip: FREESWITCH_CONN_IP
+    sip_ip: FREESWITCH_SIP_IP
+    port: FREESWITCH_SIP_PORT
+    esl_ip: ESL_IP
+    esl_port: ESL_PORT
+    esl_password: ESL_PASSWORD
+    handleExternalConnections:
+      __name: FS_HANDLE_EXT_CONN
+      __format: json
+    ipClassMappings:
+      __name: FREESWITCH_IP_MAPPINGS
+      __format: json
+
+log:
+  level: LOG_LEVEL
+  filename: LOG_FILENAME
+  stdout:
+    __name: LOG_STDOUT_ENABLED
+    __format: json
+
+recordWebcams:
+  __name: RECORD_WEBCAMS
+  __format: json
+recordScreenSharing:
+  __name: RECORD_SCREENSHARE
+  __format: json
+recordingMediaProfile: RECORDING_MEDIA_PROFILE
+recordingFormat: RECORDING_FORMAT
+recordingAdapter: RECORDING_ADAPTER
+recordingGenerateTsOnRecEvt:
+  __name: REC_TS_EXPERIMENTAL_EVT
+  __format: json
+
+modules:
+  __name: SFU_MODULES
+  __format: json
+
+conference-media-specs:
+  codec_video_main: CODEC_VIDEO_MAIN
+  codec_video_main_priority: CODEC_VIDEO_MAIN_PRIO
+  codec_video_content: CODEC_VIDEO_CONTENT
+  codec_video_content_priority: CODEC_VIDEO_CONTENT_PRIO
+  OPUS:
+    maxaveragebitrate: OPUS_MAX_AVERAGE_BITRATE
+
+videoSubscriberSpecSlave:
+  __name: VIDEO_SUBSCRIBER_SLAVE
+  __format: json
+screenshareSubscriberSpecSlave:
+  __name: SCREENSHARE_SUBSCRIBER_SLAVE
+  __format: json
+screensharePlayStartEnabled:
+  __name: SCREENSHARE_PLAY_START_ENABLED
+  __format: json
+screenshareServerSideAkkaBroadcast:
+  __name: SCREENSHARE_SERVER_AKKA_BROADCAST
+  __format: json
+
+kurentoAllowedCandidateIps:
+  __name: KURENTO_ALLOWED_CANDIDATE_IPS
+  __format: json
+
+kurentoAllowMDNSCandidates:
+  __name: KURENTO_ALLOW_MDNS
+  __format: json
+
+kurentoTrackIceStateChanges:
+  __name: KURENTO_TRACK_ICE_STATE_CHANGES
+  __format: json
+
+kurentoRemoveRembRtcpFb:
+  __name: KURENTO_REMOVE_REMB_RTCPFB
+  __format: json
+
+kurentoAllowMediaTypeMix:
+  __name: KURENTO_ALLOW_MEDIATYPE_MIX
+  __format: json
+
+mediaThresholds:
+  global: GLOBAL_MEDIA_THRESHOLD
+  perRoom: ROOM_MEDIA_THRESHOLD
+  perUser: USER_MEDIA_THRESHOLD
+
+ejectOnUserLeft:
+  __name: EJECT_ON_USER_LEFT
+  __format: json
+
+permissionProbes:
+  __name: PERMISSION_PROBES
+  __format: json
+
+media-server-adapters:
+  __name: MEDIA_SERVER_ADAPTERS
+  __format: json
+
+videoMediaServer: VIDEO_MEDIA_SERVER
+screenshareMediaServer: SCREENSHARE_MEDIA_SERVER
+audioMediaServer: AUDIO_MEDIA_SERVER
+fsBridgeMode: FS_BRIDGE_MODE
+fullAudioProxyActiveDirection:
+  __name: FULL_AUDIO_ACTIVE_DIRECTION
+  __format: json
+fullAudioEnabled:
+  __name: FULL_AUDIO_ENABLED
+  __format: json
+
+audioIgnoreMediaThresholds:
+  __name: AUDIO_IGNORE_MEDIA_THRESHOLDS
+  __format: json
+
+videoIgnoreMediaThresholds:
+  __name: VIDEO_IGNORE_MEDIA_THRESHOLDS
+  __format: json
+
+screenshareIgnoreMediaThresholds:
+  __name: SCREENSHARE_IGNORE_MEDIA_THRESHOLDS
+  __format: json
+
+prometheus:
+  enabled:
+    __name: MCS_PROM_ENABLED
+    __format: json
+  collectDefaultMetrics:
+    __name: MCS_PROM_DEFAULT_MTS
+    __format: json
+  host: MCS_PROM_HOST
+  port: MCS_PROM_PORT
+  path: MCS_PROM_PATH
+  main:
+    host: MAIN_PROM_HOST
+    port: MAIN_PROM_PORT
+    path: MAIN_PROM_PATH
+    collectDefaultMetrics:
+      __name: MAIN_PROM_DEFAULT_MTS
+      __format: json
+
+mediasoup:
+  workers:
+    __name: MS_WORKERS
+    __format: yaml
+  dedicatedMediaTypeWorkers:
+    audio:
+      __name: MS_AUDIO_WORKERS
+      __format: yaml
+    main:
+      __name: MS_MAIN_WORKERS
+      __format: yaml
+    content:
+      __name: MS_CONTENT_WORKERS
+      __format: yaml
+  worker:
+    rtcMinPort:
+      __name: MS_RTC_MIN
+      __format: json
+    rtcMaxPort:
+      __name: MS_RTC_MAX
+      __format: json
+    dtlsCertificateFile: MS_DTLS_CERT
+    dtlsPrivateKeyFile: MS_DTLS_KEY
+  promExportWorkerResourceUsage:
+    __name: MS_WORKER_RESOURCE_USAGE
+    __format: json
+  webrtc:
+    listenIps:
+      __name: MS_WEBRTC_LISTEN_IPS
+      __format: json
+  plainRtp:
+    listenIp:
+      __name: MS_RTP_LISTEN_IP
+      __format: json
+    comedia:
+      __name: MS_COMEDIA
+      __format: json
+  webRtcHeaderExts:
+    __name: MS_HDR_EXTS
+    __format: json
+  recorder:
+    ffmpeg:
+      prestartIntraframeInterval:
+        __name: FFMPEG_PRESTART_INTRAFRAME_INTERVAL
+        __format: json
+      periodicIntraframeInterval:
+        __name: FFMPEG_PERIODIC_INTRAFRAME_INTERVAL
+        __format: json
+      estimateInitialTimestamp:
+        __name: FFMPEG_ESTIMATE_INI_TS
+        __format: json
+      recMinPort: REC_MIN_PORT
+      recMaxPort: REC_MAX_PORT
+      inputOptions:
+        __name: FFMPEG_INPUT_OPTS
+        __format: json
+      outputOptions:
+        __name: FFMPEG_OUTPUT_OPTS
+        __format: json

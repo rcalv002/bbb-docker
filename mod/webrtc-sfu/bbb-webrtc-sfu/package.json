@@ -1,0 +1,45 @@
+{
+  "name": "bbb-webrtc-sfu",
+  "version": "2.8.2",
+  "private": true,
+  "engines": {
+    "npm": ">=6.0.0",
+    "node": ">=14.0.0"
+  },
+  "scripts": {
+    "start": "node server.js",
+    "lint": "./node_modules/.bin/eslint server.js lib/**",
+    "lint:file": "./node_modules/.bin/eslint",
+    "nodemon-start": "node_modules/nodemon/bin/nodemon.js server.js",
+    "postinstall": "cd node_modules/sip.js/src/Grammar && mkdir -p dist && pegjs --extra-options-file peg.json src/Grammar.pegjs dist/Grammar.js"
+  },
+  "dependencies": {
+    "bbb-sfurec-adapter": "git+https://github.com/mconf/bbb-sfurec-adapter.git#v1.0.0-dev.6",
+    "config": "3.3.6",
+    "ipaddr.js": "1.9.1",
+    "js-yaml": "3.13.1",
+    "kurento-client": "github:mconf/kurento-client-js#v6.18.0-mconf.1",
+    "mcs-js": "github:mconf/mcs-js#v0.0.15",
+    "mediasoup": "3.9.10",
+    "mediasoup-client": "3.6.43",
+    "modesl": "1.2.1",
+    "pegjs": "0.8.0",
+    "prom-client": "14.0.1",
+    "queue": "6.0.1",
+    "redis": "3.1.2",
+    "sdp-transform": "2.13.0",
+    "sip.js": "git+https://github.com/mconf/sip.js.git#v0.7.5.13",
+    "uuid": "8.3.1",
+    "winston": "3.7.2",
+    "ws": "8.4.2"
+  },
+  "devDependencies": {
+    "eslint": "^8.13.0",
+    "nodemon": "^2.0.14",
+    "safe-stable-stringify": "^2.3.1"
+  },
+  "optionalDependencies": {
+    "bufferutil": "^4.0.6",
+    "utf-8-validate": "^5.0.8"
+  }
+}
